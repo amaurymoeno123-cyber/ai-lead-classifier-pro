@@ -1,0 +1,60 @@
+/* AmauryDev Clean & Robust UI V3 */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Inter:wght@300;400;600&display=swap');
+
+/* Main Theme Variables - Streamlit handles these mostly, but we define for custom elements */
+:root {
+    --primary: #8a2be2;
+}
+
+html, body, [class*="st-"] {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Hide Streamlit elements */
+header, footer {
+    visibility: hidden;
+}
+
+/* Glass Card - Safe custom component */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Pitch Container */
+.pitch-container {
+    background: rgba(138, 43, 226, 0.05);
+    border-left: 4px solid #8a2be2;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Fix overlaps by removing aggressive sidebar overrides */
+/* We will only set the sidebar background color and trust Streamlit for the rest */
+[data-testid="stSidebar"] {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure buttons have enough space */
+.stButton button {
+    height: auto !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    line-height: 1.2 !important;
+}
+
+/* Remove any pseudo-elements that might cause ".arr" overlap */
+.streamlit-expanderHeader::after, .streamlit-expanderHeader::before {
+    content: none !important;
+}
